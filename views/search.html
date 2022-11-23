@@ -1,0 +1,12 @@
+<div class="input-group mb-2" style="width: 200px;">
+    <input class="form-control" id="search-input" style="font-size: 10px; height: 30px;">
+    <button class="input-group-append btn btn-danger justify-content-end ml-2" style="font-size: 12px; height: 30px;" id="search">검색</button>
+</div>
+<script>
+    $('#search').click(function(){
+        var searchInput = $('#search-input').val();
+        console.log(searchInput)
+        
+        window.location.replace('/search?value=' + searchInput)
+    });
+</script>

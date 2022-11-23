@@ -1,0 +1,55 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+}
+
+pre {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.banner {
+    padding: 50px 0px;
+}
+
+.title {
+    color: rgb(59, 60, 67);
+}
+
+.mypageDelete {
+    float: right;
+    border: none;
+    background-color: transparent;
+    color: #007bff;
+}
+.mypageDelete:hover{
+    color: #005aba;
+    }
+
+.mypageDelete:focus{
+    border: none;
+    outline:none;
+    }
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-subtitle {
+    font-size: small; 
+    color: rgb(84, 82, 82)
+}
+
+.btncollapse {
+    font-size: small;
+    width: 25px;
+    margin-bottom: 16px;
+    padding: 2px;
+    --bs-btn-padding-y: .25rem; 
+    --bs-btn-padding-x: .5rem;
+}
+
+.col-sm-9 {
+    font-size: small;
+    color: rgb(84, 82, 82);
+}
