@@ -43,7 +43,7 @@ MongoClient.connect(process.env.DB_URL, function(error, client){
     if(error){return console.log(error)}
     db = client.db('todoapp')
 
-    app.listen(process.env.PORT, function(){
+    app.listen(8080, function(){
         console.log('DB연결성공')
     });
 })
