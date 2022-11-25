@@ -5,8 +5,8 @@
 4. [구현사항](#📝-구현사항)
 5. [기술 스택](#🛠-기술-스택)
 6. [API Endpoints](#🎯-api-endpoints)
-7. [배포](#🔖-배포20221125)
-8. [결과](#🔖-결과)
+7. [배포](#🔖-배포20221124)
+8. [결과](#🔖-결과수정-20221125)
 
 
 ## 🚀 Service
@@ -65,11 +65,11 @@ Language | Platform | Framework | Database |
 |/edit/:id | UPDATE | 게시물 수정 | 본인만 수정 가능
 |/delete/:id | DELEETE | 게시물 삭제 | 본인만 삭제 가능
 
-## 🔖 배포(2022.11.25)
+## 🔖 배포(2022.11.24)
 주소: http://223.130.134.185/
 
 ![](https://velog.velcdn.com/images/miracle-21/post/81fc918c-a505-4235-8d0e-37bb93d5f3b8/image.png)
 
 
-## 🔖 결과
-![](https://velog.velcdn.com/images/miracle-21/post/2e8ab5ae-6266-40ad-8719-bf8fbfa756b8/image.gif)
+## 🔖 결과(수정: 2022.11.25)
+![](https://velog.velcdn.com/images/miracle-21/post/f851da54-7ffe-4681-8e2b-6e3f005fd7e8/image.gif)
