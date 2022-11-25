@@ -35,7 +35,6 @@ function identify(request, response, next){
     }
 }
 
-
 //MongoDB
 var db;
 const MongoClient = require('mongodb').MongoClient;
@@ -43,7 +42,7 @@ MongoClient.connect(process.env.DB_URL, function(error, client){
     if(error){return console.log(error)}
     db = client.db('todoapp')
 
-    app.listen(8080, function(){
+    app.listen(process.env.PORT, function(){
         console.log('DB연결성공')
     });
 })
@@ -51,20 +50,6 @@ MongoClient.connect(process.env.DB_URL, function(error, client){
 //페이지네이션
 const paginate = require('express-paginate');
 app.use(paginate.middleware(8, 50));
-
-//에러핸들링
-// app.get('/api', (req, res) => {
-//     throw new Error('BROKEN1');
-//   });
-  
-//   app.get('/api2', (req, res) => {
-//     throw new Error('BROKEN2');
-//   });
-  
-//   app.use((err, req, res, next) => {
-//     res.status(500);
-//     res.json({message: '뭔가가 잘못됐소...'});
-//   });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -195,7 +180,7 @@ app.get('/login', function(request, response){
 
 // app.post('/login', passport.authenticate('local', {successRedirect: '/', failureRedirect: '/login'}))
 app.post('/login', passport.authenticate('local', {failureRedirect: '/loginerror'}), function(request, response) {
-    response.redirect('/mypage');
+    response.redirect('/');
   })
 
 app.get('/loginerror', function(request, response) {
@@ -224,9 +209,6 @@ app.get('/search', function(request, response){
 
 
 
-
-
-
 // passport 라이브러리 사용
 passport.use(new LocalStrategy({
     usernameField: 'id',    //<input type="text" class="form-control", name="id">
@@ -235,15 +217,18 @@ passport.use(new LocalStrategy({
     passReqToCallback: false, //아이디 비번 외 다른 정보 검증시 사용.
   }, function (username, password, done) {
     db.collection('user').findOne({ id: username }, function (error, result) {
-        bcrypt.compare(password, result.pw, function(err, match) {
-            if (error) return done(error)
-            if (!result) return done(null, false, { message: '존재하지 않는 아이디' })
-            if (match) {
-                return done(null, result)
-            } else {
-                return done(null, false, { message: '비밀번호가 틀립니다' })
-            }
-        });
+        try {
+            bcrypt.compare(password, result.pw, function(err, match) {
+                if (error) return done(error)
+                if (match) {
+                    return done(null, result)
+                } else {
+                    return done(null, false, console.log('비밀번호 재확인'))
+                }
+            });
+        } catch {
+            return done(null, false, console.log('아이디/비번 재확인'))
+        }
     })
   })
 );
