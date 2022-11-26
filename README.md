@@ -49,9 +49,9 @@
 - 🚫검색 결과창은 페이징 기능이 없다
 
 ## 🛠 기술 스택
-Language | Platform | Framework | Database |
-| :----------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: | 
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"> | <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white"> | <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"> </br> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"> | <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white"> 
+Language | Platform | Framework | Database | Deloy
+| :----------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: 
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"> | <img src="https://img.shields.io/badge/Node.js-10.19.0-339933?style=for-the-badge&logo=Node.js&logoColor=white"> | <img src="https://img.shields.io/badge/express-4.18.2-000000?style=for-the-badge&logo=express&logoColor=white"> </br> <img src="https://img.shields.io/badge/Bootstrap-5.2.2-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"> | <img src="https://img.shields.io/badge/MongoDB-3.6.4-47A248?style=for-the-badge&logo=MongoDB&logoColor=white"> | <img src="https://img.shields.io/badge/navercloud-03C75A?style=for-the-badge&logo=naver&logoColor=white"> </br> <img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white">
 
 
 ## 🎯 API Endpoints
@@ -61,7 +61,7 @@ Language | Platform | Framework | Database |
 |/login | POST | 로그인
 |/signin | POST | 회원가입
 |/mypage | POST | 개인 회원 작성글 확인 페이지
-|/write | POST | 게시물 등록
+|/write | POST | 게시물 작성 | 회원만 작성 가능
 |/edit/:id | UPDATE | 게시물 수정 | 본인만 수정 가능
 |/delete/:id | DELEETE | 게시물 삭제 | 본인만 삭제 가능
 
