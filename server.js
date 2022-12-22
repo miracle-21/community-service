@@ -48,16 +48,6 @@ MongoClient.connect(process.env.DB_URL, function(error, client){
 const paginate = require('express-paginate');
 app.use(paginate.middleware(10, 50));
 
-
-function identify(request, response, next){
-    if (request.user){
-        next()
-    } else {
-        response.send("<script>alert('로그인이 필요한 기능입니다.'); window.location.replace('/login');</script>");
-    }
-};
-
-
 //router
 app.use('/', require('./routes/index.js'));
 app.use('/mypage', require('./routes/mypage.js'));
