@@ -3,29 +3,24 @@
   <%- include('head.html') %>
   <body>
     <%- include('nav.html') %>
-
     <div class="container mt-4">
-        <h2 class="banner ml-2 my-3 text-center">내용 수정</h2>
-        <form action="/edit?_method=PUT" method="POST">
-            <input value="<%= result._id %>" type="text" name="id" style="display: none;">
-            <div class="list-group-item">
-                <div class="form-group">
-                    <label class="title">제목</label>
-                    <input value="<%= result.title %>" type="text" class="form-control" name="title">
-                </div>
-            <div class="form-group">
-                <label class="title">내용</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content"><%= result.content %></textarea>
-                <!-- <input  type="text" class="form-control" name="content"> -->
-            </div>
-            <button type="submit" class="btn btn-danger">수정</button>
+      <h2 class="banner ml-2 my-3 text-center">내용 수정</h2>
+      <form action="/edit?_method=PUT" method="POST">
+          <input value="<%= result._id %>" type="text" name="id" style="display: none;">
+          <div class="list-group-item">
+              <div class="form-group">
+                  <label class="title">제목</label>
+                  <input value="<%= result.title %>" type="text" class="form-control" name="title">
+              </div>
+          <div class="form-group">
+              <label class="title">내용</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content"><%= result.content %></textarea>
+              <!-- <input  type="text" class="form-control" name="content"> -->
           </div>
-          
-        </form> 
-      </div> 
-
-    </script>
-
+          <button type="submit" class="btn btn-danger">수정</button>
+        </div>
+      </form> 
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
