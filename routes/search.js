@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 
-router.get('/search', function(request, response){
+router.get('/', function(request, response){
     var search_requirement = [
         {
           $search: {

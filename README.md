@@ -68,12 +68,15 @@ Language | Platform | Framework | Database | Deloy
 | endpoint | HTTP Method | 기능 | 기타
 |----------|-------------| ---  | --
 |/ | GET | 메인페이지 | 
+|/detail/:id | GET | 상세 페이지
+|/search | GET | 작성글 제목 검색 
 |/login | POST | 로그인
 |/signin | POST | 회원가입
 |/mypage | POST | 개인 회원 작성글 확인 페이지
 |/write | POST | 게시물 작성 | 회원만 작성 가능
 |/edit/:id | UPDATE | 게시물 수정 | 본인만 수정 가능
 |/delete/:id | DELEETE | 게시물 삭제 | 본인만 삭제 가능
+
 
 ## 🔖 배포(2022.11.24)
 주소: http://223.130.134.185/
