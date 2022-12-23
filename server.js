@@ -3,22 +3,22 @@ const express = require('express');
 const app = express();
 
 //라이브러리
-const methodOverride = require('method-override'); //AJAX
-const bodyParser = require('body-parser');
-const passport = require('passport');
+const methodOverride = require('method-override');
 app.use(methodOverride('_method'))
-app.use(bodyParser.urlencoded({extended : true}));
+const bodyParser = require('body-parser'); // request.body에 접근을 도와준다
+app.use(bodyParser.urlencoded({extended : true})); // object를 상속받는 qs.parse를 사용
 app.set('view engine', 'ejs');
-require('dotenv').config()
+app.use('/public', express.static('public')); // 정적파일 public
 
-// 미들웨어. 요청과 응답 사이에 작동하는 js.
-app.use('/public', express.static('public'));
+//환경변수
+require('dotenv').config()
 
 //쿠키파서 사용할것인가
 // var cookieParser = require('cookie-parser')
 // app.use(cookieParser('s^&ecret%@coo#kie!'))
 
 //세션활성화
+const passport = require('passport');
 const session = require('express-session');
 app.use(
     session({

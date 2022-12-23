@@ -11,12 +11,18 @@ router.get('/', function(request, response){
               path: 'title'
             }
           }
+        },
+        {
+          $sort: {created_at : -1}
         }
       ]
-      request.app.db.collection('post').aggregate(search_requirement).sort({created_at : -1 }).toArray(function(error, result){
+      
+      request.app.db.collection('post').aggregate(search_requirement)
+      .toArray(function(error, result){
         response.render('search.ejs', {result : result});
     });
 });
+
 
 
 module.exports = router;

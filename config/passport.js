@@ -22,7 +22,7 @@ module.exports = (passport) => {
                     }
                 });
             } catch {
-                return done(null, false, console.log('아이디/비번 재확인', result))
+                return done(null, false, console.log('아이디/비번 재확인'))
             }
         })
     })

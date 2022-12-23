@@ -23,7 +23,6 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
-
       $('.mypageDelete').click(function(e){
         var listNumber = e.target.dataset.id;
         var thisClick = $(this);
@@ -36,7 +35,6 @@
         }).fail(function(xhr, textStatus, errorThrown){
           alert('본인 게시물만 삭제 가능');
         });
-        
       })
     </script>
     
