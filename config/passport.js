@@ -1,5 +1,5 @@
 const LocalStrategy = require('passport-local');
-const mongo = require('../server.js')
+const mongo = require('../server.js');
 const bcrypt = require('bcrypt');
 
 module.exports = (passport) => {
