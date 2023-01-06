@@ -11,7 +11,7 @@ router.post('/add', function(request, response){
         var countPost = result.totalPost;
         var date = new Date();
         var timestamp = date.getFullYear()+"/"+((date.getMonth()+1).toString().padStart(2, "0"))+"/"+date.getDate().toString().padStart(2, "0")+" "+date.getHours().toString().padStart(2, "0")+":"+date.getMinutes().toString().padStart(2, "0")+":"+date.getSeconds().toString().padStart(2, "0");
-        var data = {_id: countPost,title:request.body.title, content:request.body.content, created_at:timestamp, user:request.user._id, username:request.user.id}
+        var data = {_id: countPost,title:request.body.title, content:request.body.content, created_at:timestamp, user:request.user._id, username:request.user.id, view:0}
         request.app.db.collection('post').insertOne(data, function(error, result){
             request.app.db.collection('counter').updateOne({name:'count'},{$inc : {totalPost:1, validPost:1}}, function(error, result){
                 if(error){
