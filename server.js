@@ -19,6 +19,7 @@ const bodyParser = require('body-parser'); // request.body에 접근을 도와�
 app.use(bodyParser.urlencoded({extended : true})); // object를 상속받는 qs.parse를 사용
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public')); // 정적파일 public
+app.set('trust proxy', true);
 
 //환경변수
 require('dotenv').config()

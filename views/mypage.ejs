@@ -11,11 +11,19 @@
       <ul class="list-group mb-2">
         <% for (var i = 0; i < result.length; i ++){ %>
           <li class="list-group-item">
-            <a class="title" href="detail/<%= result[i]._id %>"><%= result[i].title %></a>              
-            <button class="mypageDelete justify-content-md-end" data-id="<%= result[i]._id %>">삭제</button>
-            <div class="d-grid gap-2 d-md-flex" style="font-size: small; color: rgb(84, 82, 82);">
-              <%= result[i].created_at %>
+            <div>
+              <a class="title" href="detail/<%= result[i]._id %>"><%= result[i].title %></a>              
+              <button class="mypageDelete justify-content-md-end" data-id="<%= result[i]._id %>">삭제</button>
             </div>
+            <div style="margin-top:10px;">
+              <a class="d-grid gap-2 d-md-flex" style="font-size: small; color: rgb(84, 82, 82); float: left">
+                조회수: <%= result[i].view %> 
+              </a>
+              <a class="d-grid gap-2 d-md-flex" style="font-size: small; color: rgb(84, 82, 82); float: right;">
+                <%= result[i].created_at %>
+              </a>
+            </div>
+
           </li>
         <% } %>
       </ul>
