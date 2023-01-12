@@ -1,17 +1,13 @@
 const router = require('express').Router();
+const controller = require('./controller');
 
-
-router.get('/', function(request, response){
-    request.app.db.collection('counter').findOne({name : 'count'}, function(error, validPost){
-        var validPost = validPost
-        var pages = parseInt(request.query.pages)
-        var limit = parseInt(request.query.limit)
-        const ip = request.header["x-forwarded-for"] || request.connection.remoteAddress || request.socket.remoteAddress || request.connection.socket.remoteAddress;
-        request.app.db.collection('post').find().sort({created_at : -1 }).skip(limit * (pages-1)).limit(limit).toArray(function(error, result){
-            response.render('list.ejs', {result : result, validPost: validPost.validPost, limit:limit});
-        });
-    })
-});
-
+router.get('/', controller.indexHandler);
+router.get('/mypage', controller.identify, controller.mypageHandler);
+router.get('/detail/:id', controller.detailHandler);
+router.get('/write', controller.identify, controller.writePage);
+router.post('/write/add', controller.writeHandler);
+router.put('/edit', controller.editHandler);
+router.get('/edit/:id', controller.editPage);
+router.delete('/delete/:id', controller.identify, controller.deleteHandler);
 
 module.exports = router;

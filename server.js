@@ -2,16 +2,6 @@
 const express = require('express');
 const app = express();
 
-// const requestIp = require('request-ip');
-// app.use(requestIp.mw());
-// app.use(function(req, res) {
-//     // by default, the ip address will be set on the `clientIp` attribute
-//     var ip = req.clientIp;
-//     console.log(requestIp.getClientIp(req));
-//     res.end(ip + '\n');
-// });
-
-
 //라이브러리
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'))
@@ -61,11 +51,6 @@ app.use(paginate.middleware(10, 50));
 
 //router
 app.use('/', require('./routes/index.js'));
-app.use('/mypage', require('./routes/mypage.js'));
-app.use('/delete', require('./routes/delete.js'));
 app.use('/login', require('./routes/login.js'));
 app.use('/signin', require('./routes/signin.js'));
-app.use('/edit', require('./routes/edit.js'));
-app.use('/write', require('./routes/write.js'));
-app.use('/detail', require('./routes/detail.js'));
 app.use('/search', require('./routes/search.js'));
