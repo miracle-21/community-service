@@ -13,10 +13,12 @@
 ## 🚀 Service(수정: 2023.01.09)
 - 커뮤니티 서비스
 
-![](https://velog.velcdn.com/images/miracle-21/post/03f5157c-bda7-4419-a5d3-88586f56fd60/image.png)
+![](https://velog.velcdn.com/images/miracle-21/post/445391f8-6a6b-4f9f-88c4-b303986c48d4/image.png)
+
 
 ## 📆 개발 기간
-- 2022.11.17 ~ 2022.11.23(5일+)
+- 기본 CRUD: 2022.11.17 ~ 2022.11.23
+- 리팩토링 및 기능 추가: ~2023.02.02
 
 ## 🧑🏻‍💻 개발 인원(1명)
 - 박민하
@@ -92,7 +94,7 @@ Language | Platform | Framework | Database | Deloy
 
 
 ## 🔖 배포(2022.11.24)
-주소: http://223.130.134.185/
+~~주소: http://223.130.134.185/~~(2023.2.2 서비스 종료)
 
 ![](https://velog.velcdn.com/images/miracle-21/post/81fc918c-a505-4235-8d0e-37bb93d5f3b8/image.png)
 
